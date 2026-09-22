@@ -79,11 +79,7 @@ pnpm run deploy      # Deploy to Cloudflare Workers
 
 #### Installing @levibe/mcp-worker
 
-`@levibe/mcp-worker` resolves from GitHub Packages, and the committed `.npmrc` carries only the registry mapping. The credential deliberately does not live there: pnpm 11 refuses to expand an env-var credential from a project-level `.npmrc` and then sends no auth header at all, so the token has to come from user-level config, which pnpm still expands (levibe/mcp-worker#5). Three places need one, and they are different tokens:
-
-- **Locally**: a classic PAT with `read:packages`. `~/.zshrc` already exports it from the Keychain as `GITHUB_PACKAGES_TOKEN`, so the user-level `~/.npmrc` line is `//npm.pkg.github.com/:_authToken=${GITHUB_PACKAGES_TOKEN}`. Note that `gh auth token` does not carry `read:packages`.
-- **CI**: the `PACKAGES_READ_TOKEN` repository secret, a PAT with `read:packages` — the same-repo `GITHUB_TOKEN` cannot read another repository's private package. The authenticate step in `ci.yml` writes it into user config with `pnpm config set` before install, and the comment there says why that beats `setup-node`'s `registry-url`.
-- **Cloudflare Workers Builds**: `GITHUB_PACKAGES_TOKEN` as a **build** environment variable — build-time, not a runtime var, so the dashboard-var rules below are unaffected — and the build command runs the same `pnpm config set //npm.pkg.github.com/:_authToken "$GITHUB_PACKAGES_TOKEN"` before `pnpm install`. A third build variable makes that ordering possible: `SKIP_DEPENDENCY_INSTALL=true`, without which Workers Builds runs its automatic dependency install before the build command executes, and that install 401s on `@levibe/mcp-worker` before any credential exists. Like the branch-builds switch below, all of this lives in a dashboard, so it is recorded here.
+`@levibe/mcp-worker` v0.3.0 installs from `vendor/levibe-mcp-worker-0.3.0.tgz`, built without source changes from the public upstream release. No GitHub Packages authentication is needed locally, in CI, or in Workers Builds. See `vendor/README.md` for the pinned commit, checksum, and rebuild commands.
 
 #### Required Secrets (for production)
 

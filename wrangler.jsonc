@@ -5,6 +5,7 @@
 {
 	"$schema": "node_modules/wrangler/config-schema.json",
 	"name": "zendesk-mcp",
+	"account_id": "daa733811c7150ec3148993b991a2400",
 	"main": "src/index.ts",
 	// Matched to the build date of the workerd that ships with the pinned wrangler, which is
 	// the newest date that runtime knows about. Setting it further ahead only earns a warning
@@ -40,7 +41,7 @@
 		{
 			// pnpm exec wrangler kv namespace create ZENDESK_MCP_OAUTH
 			"binding": "OAUTH_KV",
-			"id": "c862c2ee524d4a45b0f531c67b6add15",
+			"id": "370562c494f242548af307c9aa7525bc",
 		},
 	],
 	// Credentials stay out of this file and are held as secrets — including ZENDESK_SUBDOMAIN

@@ -29,13 +29,61 @@ Several of those carry a second guardrail that does not depend on the ceilings. 
 
 ## Getting Started
 
+### Metatheory deployment
+
+- MCP URL: `https://zendesk-mcp.metatheory.workers.dev/mcp`
+- Google Cloud project: `metatheory-zendesk-mcp`
+- Allowed Google domain: `metatheory.gg`
+- Worker: `zendesk-mcp` in the Metatheory Cloudflare account
+- OAuth KV namespace: `ZENDESK_MCP_OAUTH` (bound as `OAUTH_KV`)
+
+Local credentials belong in the ignored `.dev.vars` file. Production credentials
+are Cloudflare Worker secrets. Never commit either set of credentials.
+
+### Connect to the existing server from Codex
+
+Coworkers only need Codex and a `@metatheory.gg` Google account. You do not need
+to clone this repository, deploy a Worker, or obtain API tokens to connect.
+
+```bash
+codex mcp add zendesk --url https://zendesk-mcp.metatheory.workers.dev/mcp
+```
+
+Complete the browser authorization with your work Google account. If sign-in
+does not start automatically, run `codex mcp login zendesk`. Restart Codex if the
+tools do not appear, then ask: "Check the Zendesk connection using support_info."
+
+The server uses shared Zendesk credentials. Google sign-in grants access to the
+server's published tools, rather than your individual Zendesk permissions.
+Reads and macro creation/updates are available; ticket writes are disabled.
+
+### Develop or maintain this deployment
+
+```bash
+git clone https://github.com/metatheoryinc/zendesk-mcp-cloudflare.git
+cd zendesk-mcp-cloudflare
+pnpm install --frozen-lockfile
+pnpm run validate
+```
+
+For local development, copy `.dev.vars.example` to `.dev.vars`, set its file
+permissions to `600`, and populate it with credentials from our internal secrets
+store. Use a development Google OAuth client with the redirect URI
+`http://localhost:8788/callback`, then run `pnpm run dev`.
+
+For production deployment, log into the Metatheory Cloudflare account with
+`pnpm exec wrangler login` and run `pnpm run deploy`. Existing Worker secrets
+are preserved. To provision or update secrets, use `pnpm exec wrangler secret put
+<SECRET_NAME>` with values from the secrets store. The account and KV namespace
+are already configured; the generic setup steps below are for a new deployment.
+
 ### Prerequisites
 
 - Zendesk instance with API access
 - Google Cloud Platform account for OAuth
 - Cloudflare account for deployment
 - [pnpm](https://pnpm.io/installation), which this project uses as its package manager. The exact version is pinned in `package.json`, and recent versions of pnpm will switch to it for you.
-- A GitHub personal access token (classic) with the `read:packages` scope, because the shared `@levibe/mcp-worker` package installs from GitHub Packages. Step 5 shows where it goes.
+- The shared `@levibe/mcp-worker` v0.3.0 dependency is vendored from its public source release. No GitHub Packages token is needed; see [vendor/README.md](vendor/README.md) for provenance and rebuild instructions.
 
 ### 1. Zendesk Setup
 
@@ -95,11 +143,7 @@ pnpm exec wrangler kv namespace create "OAUTH_KV"
 
 ### 5. Deploy and Test
 
-`@levibe/mcp-worker` installs from GitHub Packages, so `pnpm install` needs a credential that the committed `.npmrc` deliberately does not carry (the "Installing @levibe/mcp-worker" section in CLAUDE.md explains why). Add this line to your user-level `~/.npmrc`, with `GITHUB_PACKAGES_TOKEN` exported in your shell as the `read:packages` token from the prerequisites:
-
-```text
-//npm.pkg.github.com/:_authToken=${GITHUB_PACKAGES_TOKEN}
-```
+Install the locked dependencies, including the local vendored package:
 
 ```bash
 pnpm install

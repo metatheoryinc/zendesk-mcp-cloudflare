@@ -12,8 +12,8 @@ importers:
         specifier: ^0.8.3
         version: 0.8.3
       '@levibe/mcp-worker':
-        specifier: ^0.3.0
-        version: 0.3.0(@cloudflare/workers-oauth-provider@0.8.3)(@modelcontextprotocol/server@2.0.0)(agents@0.20.1(@babel/core@8.0.1)(@babel/runtime@7.29.7)(@modelcontextprotocol/client@2.0.0)(@modelcontextprotocol/sdk@1.30.0(@cfworker/json-schema@4.1.1)(supports-color@10.0.0)(zod@4.4.3))(@modelcontextprotocol/server@2.0.0)(react@19.1.0)(rolldown@1.1.5)(vite@8.1.5(esbuild@0.28.1)(tsx@4.20.3)(yaml@2.9.0))(zod@4.4.3))(hono@4.8.5)(zod@4.4.3)
+        specifier: file:vendor/levibe-mcp-worker-0.3.0.tgz
+        version: file:vendor/levibe-mcp-worker-0.3.0.tgz(@cloudflare/workers-oauth-provider@0.8.3)(@modelcontextprotocol/server@2.0.0)(agents@0.20.1(@babel/core@8.0.1)(@babel/runtime@7.29.7)(@modelcontextprotocol/client@2.0.0)(@modelcontextprotocol/sdk@1.30.0(@cfworker/json-schema@4.1.1)(supports-color@10.0.0)(zod@4.4.3))(@modelcontextprotocol/server@2.0.0)(react@19.1.0)(rolldown@1.1.5)(vite@8.1.5(esbuild@0.28.1)(tsx@4.20.3)(yaml@2.9.0))(zod@4.4.3))(hono@4.8.5)(zod@4.4.3)
       '@modelcontextprotocol/server':
         specifier: 2.0.0
         version: 2.0.0
@@ -818,8 +818,9 @@ packages:
   '@jridgewell/trace-mapping@0.3.9':
     resolution: {integrity: sha512-3Belt6tdc8bPgAtbcmdtNJlirVoTmEb5e2gC94PnkwEW9jI6CAHUeoG85tjWP5WquqfavoMtMwiG4P926ZKKuQ==}
 
-  '@levibe/mcp-worker@0.3.0':
-    resolution: {integrity: sha512-ntkRFx/JMkOyHg83tM4Ooihkr8MpmZ4olv1GUIgRdeXw6GPd34LTmbFetOdFl50O0SjZ7qr+wFKmsyRqohIUIQ==, tarball: https://npm.pkg.github.com/download/@levibe/mcp-worker/0.3.0/1be7d1103d8055cc3094f2abb0ce98ff69c63b01}
+  '@levibe/mcp-worker@file:vendor/levibe-mcp-worker-0.3.0.tgz':
+    resolution: {integrity: sha512-iWaZ17DRYHfFwEcgQO770mjQYdelH3UnJbgJ4+i+FfDCpgG0vY9WX46PM5tMId+8OH/CPngEefuap+mCH7Y+nQ==, tarball: file:vendor/levibe-mcp-worker-0.3.0.tgz}
+    version: 0.3.0
     engines: {node: '>=22'}
     peerDependencies:
       '@cloudflare/workers-oauth-provider': ^0.8.3
@@ -827,6 +828,13 @@ packages:
       agents: ^0.20.1
       hono: ^4.8.0
       zod: ^4.0.0
+    peerDependenciesMeta:
+      '@cloudflare/workers-oauth-provider':
+        optional: true
+      agents:
+        optional: true
+      hono:
+        optional: true
 
   '@modelcontextprotocol/client@2.0.0':
     resolution: {integrity: sha512-8f1OghQ2rjzIOfqgUCP+8GiUWqRs89njoWLNqAe8kWmDePv3s1fZXseej+QXemssEuuOvLLmLO/kqM3IQHtISw==}
@@ -1553,6 +1561,7 @@ packages:
   eslint@9.31.0:
     resolution: {integrity: sha512-QldCVh/ztyKJJZLr4jXNUByx3gR+TDYZCRXEktiZoUR3PGy4qCmSbkxcIle8GEwGpb5JBZazlaJ/CxLidXdEbQ==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
+    deprecated: This version is no longer supported. Please see https://eslint.org/version-support for other options.
     hasBin: true
     peerDependencies:
       jiti: '*'
@@ -3037,13 +3046,14 @@ snapshots:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.5.5
 
-  '@levibe/mcp-worker@0.3.0(@cloudflare/workers-oauth-provider@0.8.3)(@modelcontextprotocol/server@2.0.0)(agents@0.20.1(@babel/core@8.0.1)(@babel/runtime@7.29.7)(@modelcontextprotocol/client@2.0.0)(@modelcontextprotocol/sdk@1.30.0(@cfworker/json-schema@4.1.1)(supports-color@10.0.0)(zod@4.4.3))(@modelcontextprotocol/server@2.0.0)(react@19.1.0)(rolldown@1.1.5)(vite@8.1.5(esbuild@0.28.1)(tsx@4.20.3)(yaml@2.9.0))(zod@4.4.3))(hono@4.8.5)(zod@4.4.3)':
+  '@levibe/mcp-worker@file:vendor/levibe-mcp-worker-0.3.0.tgz(@cloudflare/workers-oauth-provider@0.8.3)(@modelcontextprotocol/server@2.0.0)(agents@0.20.1(@babel/core@8.0.1)(@babel/runtime@7.29.7)(@modelcontextprotocol/client@2.0.0)(@modelcontextprotocol/sdk@1.30.0(@cfworker/json-schema@4.1.1)(supports-color@10.0.0)(zod@4.4.3))(@modelcontextprotocol/server@2.0.0)(react@19.1.0)(rolldown@1.1.5)(vite@8.1.5(esbuild@0.28.1)(tsx@4.20.3)(yaml@2.9.0))(zod@4.4.3))(hono@4.8.5)(zod@4.4.3)':
     dependencies:
-      '@cloudflare/workers-oauth-provider': 0.8.3
       '@modelcontextprotocol/server': 2.0.0
+      zod: 4.4.3
+    optionalDependencies:
+      '@cloudflare/workers-oauth-provider': 0.8.3
       agents: 0.20.1(@babel/core@8.0.1)(@babel/runtime@7.29.7)(@modelcontextprotocol/client@2.0.0)(@modelcontextprotocol/sdk@1.30.0(@cfworker/json-schema@4.1.1)(supports-color@10.0.0)(zod@4.4.3))(@modelcontextprotocol/server@2.0.0)(react@19.1.0)(rolldown@1.1.5)(vite@8.1.5(esbuild@0.28.1)(tsx@4.20.3)(yaml@2.9.0))(zod@4.4.3)
       hono: 4.8.5
-      zod: 4.4.3
 
   '@modelcontextprotocol/client@2.0.0':
     dependencies:
