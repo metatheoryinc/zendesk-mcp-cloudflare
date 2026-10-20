@@ -13,13 +13,13 @@ importers:
         version: 0.8.3
       '@levibe/mcp-worker':
         specifier: file:vendor/levibe-mcp-worker-0.3.0.tgz
-        version: file:vendor/levibe-mcp-worker-0.3.0.tgz(@cloudflare/workers-oauth-provider@0.8.3)(@modelcontextprotocol/server@2.0.0)(agents@0.20.1(@babel/core@8.0.1)(@babel/runtime@7.29.7)(@modelcontextprotocol/client@2.0.0)(@modelcontextprotocol/sdk@1.30.0(@cfworker/json-schema@4.1.1)(supports-color@10.0.0)(zod@4.4.3))(@modelcontextprotocol/server@2.0.0)(react@19.1.0)(rolldown@1.1.5)(vite@8.1.5(esbuild@0.28.1)(tsx@4.20.3)(yaml@2.9.0))(zod@4.4.3))(hono@4.8.5)(zod@4.4.3)
+        version: file:vendor/levibe-mcp-worker-0.3.0.tgz(@cloudflare/workers-oauth-provider@0.8.3)(@modelcontextprotocol/server@2.3.0)(agents@0.20.1(@babel/core@8.0.1)(@babel/runtime@7.29.7)(@modelcontextprotocol/client@2.0.0)(@modelcontextprotocol/sdk@1.30.0(@cfworker/json-schema@4.1.1)(supports-color@10.0.0)(zod@4.4.3))(@modelcontextprotocol/server@2.3.0)(react@19.1.0)(rolldown@1.1.5)(vite@8.1.5(esbuild@0.28.1)(tsx@4.20.3)(yaml@2.9.0))(zod@4.4.3))(hono@4.8.5)(zod@4.4.3)
       '@modelcontextprotocol/server':
-        specifier: 2.0.0
-        version: 2.0.0
+        specifier: 2.3.0
+        version: 2.3.0
       agents:
         specifier: ^0.20.1
-        version: 0.20.1(@babel/core@8.0.1)(@babel/runtime@7.29.7)(@modelcontextprotocol/client@2.0.0)(@modelcontextprotocol/sdk@1.30.0(@cfworker/json-schema@4.1.1)(supports-color@10.0.0)(zod@4.4.3))(@modelcontextprotocol/server@2.0.0)(react@19.1.0)(rolldown@1.1.5)(vite@8.1.5(esbuild@0.28.1)(tsx@4.20.3)(yaml@2.9.0))(zod@4.4.3)
+        version: 0.20.1(@babel/core@8.0.1)(@babel/runtime@7.29.7)(@modelcontextprotocol/client@2.0.0)(@modelcontextprotocol/sdk@1.30.0(@cfworker/json-schema@4.1.1)(supports-color@10.0.0)(zod@4.4.3))(@modelcontextprotocol/server@2.3.0)(react@19.1.0)(rolldown@1.1.5)(vite@8.1.5(esbuild@0.28.1)(tsx@4.20.3)(yaml@2.9.0))(zod@4.4.3)
       hono:
         specifier: ^4.8.3
         version: 4.8.5
@@ -844,6 +844,10 @@ packages:
     resolution: {integrity: sha512-pJCEwGG7Lfr/+PQp9ZTwKXNeO5wzbfKL7H3MYpCorM4oFBoQrdjnBgEoqG+RjhsvS1FKrDbKux+M1HhlnGWqcA==}
     engines: {node: '>=20'}
 
+  '@modelcontextprotocol/core@2.3.0':
+    resolution: {integrity: sha512-09BHFaNVBe5pB2AhzCfLj0cqmsKLERvZQ4FblzP90UMGLaXVqdZPByFjURwsUYCmxonUW2yAwgTTvle+8O2/8w==}
+    engines: {node: '>=20'}
+
   '@modelcontextprotocol/sdk@1.30.0':
     resolution: {integrity: sha512-xKd8OIzlqNzcqcNumGAa6g+PW2kjD5vrpcKOnfldAUPP3j7lnqMPwlTXQm8gF+UwH72z0lqaRbjr9hqGz0eITA==}
     engines: {node: '>=18'}
@@ -854,8 +858,8 @@ packages:
       '@cfworker/json-schema':
         optional: true
 
-  '@modelcontextprotocol/server@2.0.0':
-    resolution: {integrity: sha512-YhHWdHfpFMQfd0prsEnxKeS3Qz3ytIGmsS0sth4KDjnacIT7hxk6hXHkJ9KysxlkvTM+WZAtQbbcUhdoP4Hvtw==}
+  '@modelcontextprotocol/server@2.3.0':
+    resolution: {integrity: sha512-+6b0LdsQLmHsvS7J6sQJ4weTpzUn61fU1JKS+321/+IyDYoHW5CR2Tgqcs6GgAAQvlesCo6yX3xttgmx+XGtJw==}
     engines: {node: '>=20'}
 
   '@napi-rs/wasm-runtime@1.1.6':
@@ -2494,6 +2498,9 @@ packages:
   zod@4.4.3:
     resolution: {integrity: sha512-ytENFjIJFl2UwYglde2jchW2Hwm4GJFLDiSXWdTrJQBIN9Fcyp7n4DhxJEiWNAJMV1/BqWfW/kkg71UDcHJyTQ==}
 
+  zod@4.6.7:
+    resolution: {integrity: sha512-g8W2D2kU6a8untc053fX1uVBKzM7yqAxW/3zwk83+6RyF2+SKOuV+c0wBDhUwzV1PaGapmZH+rmcUzPf+3CGwg==}
+
 snapshots:
 
   '@babel/code-frame@8.0.0':
@@ -3046,13 +3053,13 @@ snapshots:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.5.5
 
-  '@levibe/mcp-worker@file:vendor/levibe-mcp-worker-0.3.0.tgz(@cloudflare/workers-oauth-provider@0.8.3)(@modelcontextprotocol/server@2.0.0)(agents@0.20.1(@babel/core@8.0.1)(@babel/runtime@7.29.7)(@modelcontextprotocol/client@2.0.0)(@modelcontextprotocol/sdk@1.30.0(@cfworker/json-schema@4.1.1)(supports-color@10.0.0)(zod@4.4.3))(@modelcontextprotocol/server@2.0.0)(react@19.1.0)(rolldown@1.1.5)(vite@8.1.5(esbuild@0.28.1)(tsx@4.20.3)(yaml@2.9.0))(zod@4.4.3))(hono@4.8.5)(zod@4.4.3)':
+  '@levibe/mcp-worker@file:vendor/levibe-mcp-worker-0.3.0.tgz(@cloudflare/workers-oauth-provider@0.8.3)(@modelcontextprotocol/server@2.3.0)(agents@0.20.1(@babel/core@8.0.1)(@babel/runtime@7.29.7)(@modelcontextprotocol/client@2.0.0)(@modelcontextprotocol/sdk@1.30.0(@cfworker/json-schema@4.1.1)(supports-color@10.0.0)(zod@4.4.3))(@modelcontextprotocol/server@2.3.0)(react@19.1.0)(rolldown@1.1.5)(vite@8.1.5(esbuild@0.28.1)(tsx@4.20.3)(yaml@2.9.0))(zod@4.4.3))(hono@4.8.5)(zod@4.4.3)':
     dependencies:
-      '@modelcontextprotocol/server': 2.0.0
+      '@modelcontextprotocol/server': 2.3.0
       zod: 4.4.3
     optionalDependencies:
       '@cloudflare/workers-oauth-provider': 0.8.3
-      agents: 0.20.1(@babel/core@8.0.1)(@babel/runtime@7.29.7)(@modelcontextprotocol/client@2.0.0)(@modelcontextprotocol/sdk@1.30.0(@cfworker/json-schema@4.1.1)(supports-color@10.0.0)(zod@4.4.3))(@modelcontextprotocol/server@2.0.0)(react@19.1.0)(rolldown@1.1.5)(vite@8.1.5(esbuild@0.28.1)(tsx@4.20.3)(yaml@2.9.0))(zod@4.4.3)
+      agents: 0.20.1(@babel/core@8.0.1)(@babel/runtime@7.29.7)(@modelcontextprotocol/client@2.0.0)(@modelcontextprotocol/sdk@1.30.0(@cfworker/json-schema@4.1.1)(supports-color@10.0.0)(zod@4.4.3))(@modelcontextprotocol/server@2.3.0)(react@19.1.0)(rolldown@1.1.5)(vite@8.1.5(esbuild@0.28.1)(tsx@4.20.3)(yaml@2.9.0))(zod@4.4.3)
       hono: 4.8.5
 
   '@modelcontextprotocol/client@2.0.0':
@@ -3068,6 +3075,10 @@ snapshots:
   '@modelcontextprotocol/core@2.0.0':
     dependencies:
       zod: 4.4.3
+
+  '@modelcontextprotocol/core@2.3.0':
+    dependencies:
+      zod: 4.6.7
 
   '@modelcontextprotocol/sdk@1.30.0(@cfworker/json-schema@4.1.1)(supports-color@10.0.0)(zod@4.4.3)':
     dependencies:
@@ -3093,10 +3104,10 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@modelcontextprotocol/server@2.0.0':
+  '@modelcontextprotocol/server@2.3.0':
     dependencies:
-      '@modelcontextprotocol/core': 2.0.0
-      zod: 4.4.3
+      '@modelcontextprotocol/core': 2.3.0
+      zod: 4.6.7
 
   '@napi-rs/wasm-runtime@1.1.6(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.1)':
     dependencies:
@@ -3422,13 +3433,13 @@ snapshots:
 
   acorn@8.15.0: {}
 
-  agents@0.20.1(@babel/core@8.0.1)(@babel/runtime@7.29.7)(@modelcontextprotocol/client@2.0.0)(@modelcontextprotocol/sdk@1.30.0(@cfworker/json-schema@4.1.1)(supports-color@10.0.0)(zod@4.4.3))(@modelcontextprotocol/server@2.0.0)(react@19.1.0)(rolldown@1.1.5)(vite@8.1.5(esbuild@0.28.1)(tsx@4.20.3)(yaml@2.9.0))(zod@4.4.3):
+  agents@0.20.1(@babel/core@8.0.1)(@babel/runtime@7.29.7)(@modelcontextprotocol/client@2.0.0)(@modelcontextprotocol/sdk@1.30.0(@cfworker/json-schema@4.1.1)(supports-color@10.0.0)(zod@4.4.3))(@modelcontextprotocol/server@2.3.0)(react@19.1.0)(rolldown@1.1.5)(vite@8.1.5(esbuild@0.28.1)(tsx@4.20.3)(yaml@2.9.0))(zod@4.4.3):
     dependencies:
       '@babel/plugin-proposal-decorators': 8.0.2(@babel/core@8.0.1)
       '@cfworker/json-schema': 4.1.1
       '@modelcontextprotocol/client': 2.0.0
       '@modelcontextprotocol/sdk': 1.30.0(@cfworker/json-schema@4.1.1)(supports-color@10.0.0)(zod@4.4.3)
-      '@modelcontextprotocol/server': 2.0.0
+      '@modelcontextprotocol/server': 2.3.0
       '@rolldown/plugin-babel': 0.2.3(@babel/core@8.0.1)(@babel/runtime@7.29.7)(rolldown@1.1.5)(vite@8.1.5(esbuild@0.28.1)(tsx@4.20.3)(yaml@2.9.0))
       cron-schedule: 6.0.0
       esbuild: 0.28.1
@@ -4628,3 +4639,5 @@ snapshots:
       zod: 4.4.3
 
   zod@4.4.3: {}
+
+  zod@4.6.7: {}
