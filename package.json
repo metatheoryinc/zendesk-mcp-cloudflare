@@ -24,7 +24,7 @@
 		"@levibe/mcp-worker": "file:vendor/levibe-mcp-worker-0.3.0.tgz",
 		"@modelcontextprotocol/server": "2.0.0",
 		"agents": "^0.20.1",
-		"hono": "^4.8.3",
+		"hono": "^4.13.11",
 		"zod": "^4.4.3"
 	},
 	"devDependencies": {
